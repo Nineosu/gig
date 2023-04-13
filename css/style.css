@@ -315,3 +315,60 @@ a:hover {
         justify-content: space-between;
     }
 }
+
+@media (max-width: 960px) {
+    .pictures__list {
+        flex-direction: column;
+    }
+    .pictures__list-item {
+        width: 100%;
+    }
+    .pictures__card.big {
+        padding-bottom: 50%;
+    }
+}
+
+@media (max-width: 640px) {
+    .header__wrapper {
+        flex-direction: column;
+        gap: 15px;
+    }
+    .pictures__list-item:last-child {
+        grid-template-columns: 1fr;
+    }
+    .pictures__card {
+        padding-bottom: 50%;
+    }
+    .footer__second {
+        flex-direction: column;
+        gap: 40px;
+    }
+    .footer__first .footer__item {
+        align-items: center;
+    }
+    .footer__nav {
+        flex-direction: column;
+        align-items: center;
+    }
+    .footer__menu {
+        text-align: center;
+    }
+}
+
+@media (max-width: 420px) {
+    .header__contacts {
+        gap: 50px;
+    }
+    .header__contacts-tel {
+        font-size: 16px;
+    }
+    .pictures__item-title {
+        font-size: 22px;
+    }
+    .footer__title-h1 {
+        font-size: 30px;
+    }
+    .footer__menu-link {
+        font-size: 16px;
+    }
+}
