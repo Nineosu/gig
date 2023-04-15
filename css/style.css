@@ -392,7 +392,7 @@ a:hover {
     height: 87px;
     top: -50px;
     left: 0;
-    background: url('/img/quote-ico.svg') no-repeat center;
+    background: url('./img/quote-ico.svg') no-repeat center;
 }
 
 .gradient__space {
@@ -712,6 +712,9 @@ a:hover {
         font-size: 30px;
         line-height: 40px;
     }
+    .gradient-text {
+        font-size: 28px;
+    }
     
     .pictures__list {
         flex-direction: column;
@@ -768,6 +771,12 @@ a:hover {
     .swiper2 .slide__text {
         height: 220px;
     }
+    .quote .mission__title {
+        gap: 0;
+    }
+    .quote__block-img::after {
+        top: -120%;
+    }
     .footer__second {
         flex-direction: column;
         gap: 40px;
@@ -793,6 +802,13 @@ a:hover {
     }
     .pictures__item-title {
         font-size: 22px;
+    }
+    .about__title-h1 {
+        font-size: 32px;
+    }
+    .gradient-text {
+        font-size: 20px;
+        line-height: 34px;
     }
     .footer__title-h1 {
         font-size: 30px;
