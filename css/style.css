@@ -17,6 +17,10 @@ html, body {
     overflow-x: hidden;
 }
 
+a {
+    text-decoration: none;
+}
+
 a:hover {
     opacity: .7;
     cursor: pointer;
@@ -91,6 +95,7 @@ a:hover {
     height: 28px;
     position: relative;
     margin-left: auto;
+    margin-right: 20px;
     z-index: 2;
     display: none;
 }
@@ -139,6 +144,9 @@ a:hover {
 
 /* Header end */
 
+section {
+    margin-bottom: 300px;
+}
 
 /* Index start */
 .pictures {
@@ -222,14 +230,17 @@ a:hover {
 
 
 /* About start */
-.about {
+.main-section {
     position: relative;
-    background: url('../img/about-bg.jpg') no-repeat center;
-    background-size: cover;
     height: 100vh;
 }
+.main-about {
+    background: url('../img/about-bg.jpg') no-repeat center;
+    background-size: cover;
+    margin-bottom: 50px;
+}
 
-.about__title {
+.main-section__title {
     position: absolute;
     top: 50%;
     left: 50%;
@@ -242,7 +253,7 @@ a:hover {
     padding: 10px 10px 100px;
 }
 
-.about__title-h1 {
+.main-section__title-h1 {
     font-weight: 700;
     font-size: 100px;
     line-height: 114px;
@@ -258,7 +269,7 @@ a:hover {
     margin-bottom: 150px;
 }
 
-.mission__title {
+.block__title {
     margin: 0 auto;
     max-width: 1080px;
     width: 100%;
@@ -274,6 +285,10 @@ a:hover {
     -webkit-background-clip: text;
     background-clip: text;
 }
+.block__title .gradient-text {
+    padding: 0 15px;
+}
+
 .mission__title-text:first-child {
     margin-bottom: 60px;
 }
@@ -309,7 +324,9 @@ a:hover {
     background-clip: text;
     margin-bottom: 55px;
 }
-
+section.activity {
+    margin-bottom: 0;
+}
 .activity__block {
     padding: 65px 0;
     background: #F4F4F4;
@@ -347,6 +364,9 @@ a:hover {
     width: max-content;
 }
 .card__desc-text {
+    font-weight: 400;
+    font-size: 24px;
+    line-height: 28px;
     white-space: pre-line;
 }
 
@@ -369,12 +389,12 @@ a:hover {
 
 .activity__card-desc {
     max-width: 750px;
-    font-weight: 400;
-    font-size: 24px;
-    line-height: 28px;
+}
+section.quote {
+    margin-bottom: 0;
 }
 
-.quote .mission__title {
+.quote .block__title {
     display: flex;
     gap: 80px;
     margin: 160px auto;
@@ -482,6 +502,84 @@ a:hover {
 
 /* About end */
 
+
+/* CMP start */
+
+.main-cmp {
+    background: url('../img/cmp-bg.jpg') no-repeat center;
+    background-size: cover;
+}
+
+.work__card {
+    max-width: 1359px;
+    display: flex;
+    gap: 15px;
+    margin: 0 auto;
+    margin-bottom: 237px;
+    align-items: center;
+    justify-content: space-between;
+    border: 3px solid #EFF0F6;
+    border-radius: 60px;
+}
+.work__card:last-child {
+    margin-bottom: 0;
+}
+
+.work .card__desc-text {
+    max-width: 560px;
+}
+
+.work .card__desc-text:nth-child(odd) {
+    padding-left: 55px;
+}
+.work .card__desc-text:nth-child(even) {
+    padding-right: 55px;
+}
+
+.work__card-img {
+    width: 100%;
+}
+
+.page__bottom {
+    display: flex;
+    justify-content: flex-end;
+    margin-bottom: 115px;
+}
+
+.bottom__link {
+    display: flex;
+    align-items: center;
+    gap: 25px;
+}
+
+.bottom__link-img {
+    box-shadow: 0px 5.50776px 22.031px rgba(158, 158, 158, 0.25);
+    border-radius: 22.031px;
+    width: 187px;
+    height: 187px;
+}
+
+/* CMP end */
+
+/* CMP-2 start */
+
+.main-cmp-2 {
+    background: url('../img/cmp-2-bg.jpg') no-repeat center;
+    background-size: cover;
+}
+
+.work .card__desc-text:nth-child(even) {
+    padding-left: 55px;
+}
+.work .card__desc-text:nth-child(odd) {
+    padding-right: 55px;
+}
+
+.cmp-2 .page__bottom {
+    justify-content: center;
+}
+
+/* CMP-2 end */
 
 /* Footer start */
 
@@ -639,7 +737,7 @@ a:hover {
     .header__list {
         gap: 20px;
     }
-    .about__title {
+    .main-section__title {
         max-width: max-content;
         padding: 20px;
         text-align: center;
@@ -728,11 +826,31 @@ a:hover {
     .activity__card {
         flex-direction: column;
     }
-    .about__title-h1 {
+    .main-section__title-h1 {
         font-size: 60px;
     }
     .swiper-button-next2 {
         top: 0;
+    }
+    .partners__image {
+        width: 250px;
+        height: 150px;
+    }
+
+    .work__card {
+        flex-direction: column;
+        gap: 25px;
+        padding-bottom: 35px;
+        max-width: max-content;
+    }
+    .cmp-1 .work__card:nth-child(odd) {
+        flex-direction: column-reverse;
+    }
+    .cmp-2 .work__card:nth-child(even) {
+        flex-direction: column-reverse;
+    }
+    .work .work__card .card__desc-text {
+        padding: 0;
     }
 }
 
@@ -747,18 +865,28 @@ a:hover {
     .header__bottom {
         bottom: -40%;
     }
+    section {
+        margin-bottom: 150px;
+    }
     .pictures__list-item:last-child {
         grid-template-columns: 1fr;
     }
     .pictures__card {
         padding-bottom: 50%;
     }
-    .about__title-h1 {
+    .main-section__title-h1 {
         font-size: 40px;
         line-height: 80px;
     }
     .gradient-text {
         font-size: 30px;
+    }
+    .work__card:not(:last-child) {
+        margin-bottom: 150px;
+    }
+    .bottom__link-img {
+        width: 120px;
+        height: 120px;
     }
     .swiper-button-next2 {
         display: none;
@@ -771,11 +899,16 @@ a:hover {
     .swiper2 .slide__text {
         height: 220px;
     }
-    .quote .mission__title {
+    .quote .block__title {
         gap: 0;
     }
     .quote__block-img::after {
         top: -120%;
+    }
+    .partners__images {
+        flex-direction: column;
+        align-items: center;
+        margin-left: 0;
     }
     .footer__second {
         flex-direction: column;
@@ -803,12 +936,31 @@ a:hover {
     .pictures__item-title {
         font-size: 22px;
     }
-    .about__title-h1 {
+    .main-section__title-h1 {
         font-size: 32px;
     }
     .gradient-text {
         font-size: 20px;
         line-height: 34px;
+    }
+    .work .work__card .card__desc-text {
+        padding: 20px;
+        text-align: center;
+    }
+    .work__card:not(:last-child) {
+        margin-bottom: 100px;
+    }
+    .page__bottom {
+        justify-content: center;
+    }
+    .bottom__link {
+        flex-direction: column;
+        gap: 0;
+    }
+    .bottom__link-img {
+        width: 80px;
+        height: 80px;
+        margin-left: auto;
     }
     .footer__title-h1 {
         font-size: 30px;
