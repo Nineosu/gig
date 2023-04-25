@@ -82,26 +82,28 @@ window.addEventListener('DOMContentLoaded', () => {
     });
 
     // Map
-    ymaps.ready(init);
-    function init(){
-        var map = new ymaps.Map("map", {
-            center: [59.89304245512269,30.325025635581916],
-            zoom: 17
-        });
+    if (document.querySelector('#map')) {
+        ymaps.ready(init);
+        function init(){
+            var map = new ymaps.Map("map", {
+                center: [59.89304245512269,30.325025635581916],
+                zoom: 17
+            });
 
-        const placemark = new ymaps.Placemark([59.89304245512269,30.325025635581916], {}, {
+            const placemark = new ymaps.Placemark([59.89304245512269,30.325025635581916], {}, {
 
-        });
+            });
 
-        map.controls.remove('geolocationControl'); // удаляем геолокацию
-        map.controls.remove('searchControl'); // удаляем поиск
-        map.controls.remove('trafficControl'); // удаляем контроль трафика
-        map.controls.remove('typeSelector'); // удаляем тип
-        map.controls.remove('fullscreenControl'); // удаляем кнопку перехода в полноэкранный режим
-        map.controls.remove('zoomControl'); // удаляем контрол зуммирования
-        map.controls.remove('rulerControl'); // удаляем контрол правил
-        map.behaviors.disable(['scrollZoom']); // отключаем скролл карты (опционально)
+            map.controls.remove('geolocationControl'); // удаляем геолокацию
+            map.controls.remove('searchControl'); // удаляем поиск
+            map.controls.remove('trafficControl'); // удаляем контроль трафика
+            map.controls.remove('typeSelector'); // удаляем тип
+            map.controls.remove('fullscreenControl'); // удаляем кнопку перехода в полноэкранный режим
+            map.controls.remove('zoomControl'); // удаляем контрол зуммирования
+            map.controls.remove('rulerControl'); // удаляем контрол правил
+            map.behaviors.disable(['scrollZoom']); // отключаем скролл карты (опционально)
 
-        map.geoObjects.add(placemark);
-    };
+            map.geoObjects.add(placemark);
+        };
+    }
 });
